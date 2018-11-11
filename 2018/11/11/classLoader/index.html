@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="">
+  
+  <title>java一个程序的完整过程</title>
+  <meta name="author" content="hjy">
+  <meta name="description" content="网页描述">
+  
+  
+  <meta property="og:title" content="java一个程序的完整过程">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="rely">
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="rely" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+</html>
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;
+      </div>
+    </div>
+    <div class="main-ctnr">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        java一个程序的完整过程
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2018-11-11T08:24:06.000Z">
+<svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
+  </svg>
+  &nbsp;
+  2018-11-11
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/categories/java/">java</a>
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编写期"><span class="toc-text">编写期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译期"><span class="toc-text">编译期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加载期-类加载过程"><span class="toc-text">加载期(类加载过程)</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h2 id="编写期"><a href="#编写期" class="headerlink" title="编写期"></a>编写期</h2><blockquote>
+<p>这是我自己的一个说法<br>当我们打开我们熟悉的编程工具<br>开始一段一段代码的编写,这就是我所说的编写期</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是我们最熟悉不过的代码了,每个程序员不写个Hello World就全身不舒.<br>写了这个代码以后,我们存放文件的目录下会有一个HelloWrold.java的文件,我们的编写期就完成啦</p>
+</blockquote>
+<h2 id="编译期"><a href="#编译期" class="headerlink" title="编译期"></a>编译期</h2><blockquote>
+<p>HelloWord.java这个文件是给我们程序员看的<br>接下来我们就是要把它变成计算机可以看懂的代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在windows系统下,打开cmd,进入HelloWorld.java所在的文件夹</span><br><span class="line">输入  javac HelloWorld.java   命令</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是将HelloWorld.java文件编译成HelloWorld.class文件,这就是一个机器可以读得懂的文件<br>需要解析它的就是java虚拟机了<br>这个过程是一个翻译的过程,在这个过程里也会检查我们写的代码是不是有错</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> String a = <span class="string">"Hello World"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是一个编译期常量<br>static表示这个属性只能有一个<br>final表示这个属性赋值后就不能更改了<br>所以这个一个编译期就确定的变量<br>在以后的调用时,和这个属性所在的类是没有关系的,并不会去加载这个类(下面要说的加载期)<br>在网上看到一个使用编译期常量的注意事项:<br>在更新编译期常量时,一定要重新编译整个程序,不然会出现读取变量的值不同的风险</p>
+</blockquote>
+<h2 id="加载期-类加载过程"><a href="#加载期-类加载过程" class="headerlink" title="加载期(类加载过程)"></a>加载期(类加载过程)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在上面生成HelloWorld.class文件的目录下</span><br><span class="line">输入    java HelloWorld    命令</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样java虚拟机就会将HelloWorld.class文件加载到内存中进行加载<br>这我们就要说一下java的类加载机制了<br>类加载过程一共分为五个部分,如下图:</p>
+</blockquote>
+<p><img src="/2018/11/11/classLoader/类加载过程.png" alt="类加载过程"></p>
+<ul>
+<li>加载(重点)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">加载时类加载过程的第一个阶段，在加载阶段，虚拟机需要完成以下三件事情：</span><br><span class="line"></span><br><span class="line">1、通过一个类的全限定名来获取其定义的二进制字节流。</span><br><span class="line"></span><br><span class="line">2、将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。</span><br><span class="line"></span><br><span class="line">3、在Java堆中生成一个代表这个类的java.lang.Class对象，作为对方法区中这些数据的访问入口。</span><br><span class="line"></span><br><span class="line">换简单的话来说,就是通过HelloWorld的完整类名,去寻找这个类生产的.class二进制文件,将其加载到内存中.</span><br><span class="line">* 这个类有关的信息都存在方法区中</span><br><span class="line">    - 类的全路径名</span><br><span class="line">    - 这个类父类的全路径名</span><br><span class="line">    - 类的类型(类或接口)</span><br><span class="line">    - 类的访问修饰符(public,private等)</span><br><span class="line">    - 常量池(字段,方法信息(静态方法,非静态方法),静态变量,类型引用等)</span><br><span class="line"></span><br><span class="line">堆中会生成一个该类的java.lang.Class对象,作为入口去访问方法区中存储的数据</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/2018/11/11/classLoader/类信息存放.png" alt="类信息存放"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在加载时,类的静态方法就已经存在方法区中了,在堆中生成了对应的对象,所以通过这个对象就可以直接访问静态方法了.如我们平时使用的: 类名.静态方法名()</span><br><span class="line"></span><br><span class="line">而非静态方法也是存在方法区中的,它需要对象实例化后,在调用需要的方法是,会从方法区中找到对应的方法,将其加载到栈帧中进行执行.</span><br><span class="line"></span><br><span class="line">将非静态方法存于方法区中,可做到复用,每次实例化一个新的对象时,调用的方法都是从方法区中找的.不至于每次实例化一个对象,都要重新加载一次对象的方法,这样会给内存带来很大的压力.</span><br></pre></td></tr></table></figure>
+<p>类加载器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">说到了类到的加载,会好奇它到底是怎么加载的,是通过什么进行加载的.这就要看看类加载器了</span><br><span class="line"></span><br><span class="line">BootstrapClassLoader</span><br><span class="line">ExtClassLoader</span><br><span class="line">ApplicationClassLoader</span><br><span class="line"></span><br><span class="line">这是三种默认使用的类加载器,做一下简单的介绍</span><br></pre></td></tr></table></figure></p>
+<p>BootstrapClassLoader</p>
+<blockquote>
+<p>称为启动类加载器,是java类加载器中最顶层的类加载器,也是负责加载JDK核心类库的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//其加载的核心类库</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    URL[] urls = Launcher.getBootstrapClassPath().getURLs();</span><br><span class="line">    <span class="keyword">for</span>(URL url : urls)&#123;</span><br><span class="line">        System.out.println(url);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">结果:</span><br><span class="line">file:/C:/Program%<span class="number">20F</span>iles/Java/jdk1.8.0_102/jre/lib/resources.jar</span><br><span class="line">file:/C:/Program%<span class="number">20F</span>iles/Java/jdk1.8.0_102/jre/lib/rt.jar</span><br><span class="line">file:/C:/Program%<span class="number">20F</span>iles/Java/jdk1.8.0_102/jre/lib/sunrsasign.jar</span><br><span class="line">file:/C:/Program%<span class="number">20F</span>iles/Java/jdk1.8.0_102/jre/lib/jsse.jar</span><br><span class="line">file:/C:/Program%<span class="number">20F</span>iles/Java/jdk1.8.0_102/jre/lib/jce.jar</span><br><span class="line">file:/C:/Program%<span class="number">20F</span>iles/Java/jdk1.8.0_102/jre/lib/charsets.jar</span><br><span class="line">file:/C:/Program%<span class="number">20F</span>iles/Java/jdk1.8.0_102/jre/lib/jfr.jar</span><br><span class="line">file:/C:/Program%<span class="number">20F</span>iles/Java/jdk1.8.0_102/jre/classes</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>还有一个奇怪的现象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    System.out.println(String.class);</span><br><span class="line">    System.out.println(String.class.getClassLoader());</span><br><span class="line"></span><br><span class="line">    ClassLoader classLoader = sun.security.ec.SunEC.class.getClassLoader();</span><br><span class="line">    System.out.println(classLoader);</span><br><span class="line">    System.out.println(classLoader.getParent());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">结果:</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">java</span>.<span class="title">lang</span>.<span class="title">String</span></span></span><br><span class="line"><span class="class"><span class="title">null</span></span></span><br><span class="line"><span class="class"><span class="title">sun</span>.<span class="title">misc</span>.<span class="title">Launcher</span>$<span class="title">ExtClassLoader</span>@5<span class="title">cad8086</span></span></span><br><span class="line"><span class="class"><span class="title">null</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>加载String.Class的类加载器是BootstrapClassLoader<br>ExtClassLiader类加载器的父类加载器也是BootstrapClassLoader<br>但是两次结果输出的都是null,这就有点奇怪了<br>查询一番资料,得知BootstrapClassLoader的底层实现是由C/C++编写的,并不是一个java类,在java代码中不能获取到它的引用,所以两次输出的结果都是null</p>
+</blockquote>
+<p>ExtClassLoader</p>
+<blockquote>
+<p>扩展类加载器,默认加载JAVA_HOME/jre/lib/ext/目录下的所有jar包</p>
+</blockquote>
+<p>ApplicationClassLoader</p>
+<blockquote>
+<p>应用加载器,也称为系统加载器,负责在JVM启动时,加载来自在命令java中的classpath或者java.class.path系统属性或者CLASSPATH操作系统属性所指定的JAR类包和类路径.<br>平时我们写的类基本都是它来加载的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//写的一个普通测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(Test.class.getClassLoader());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">结果:</span><br><span class="line">sun.misc.Launcher$AppClassLoader@<span class="number">18</span>b4aac2</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>类加载器的工作原理</p>
+<blockquote>
+<p>类加载器的工作原理基于三个机制:<br>双亲委派机制<br>可见性机制<br>单一性机制</p>
+</blockquote>
+<p>双亲委派机制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">java类加载器加载类的顺序是从上向下的,就默认的三个类加载器来说  </span><br><span class="line">加载一个Test.class </span><br><span class="line"></span><br><span class="line">1.先拿到这个二进制文件的是ApplicationClassLoader  </span><br><span class="line">2.到手后什么都不做,直接扔给父加载器ExtClassLoader  </span><br><span class="line">3.同样的,ExtClassLoader拿到后,也直接扔给它的父加载器BootstrapClassLoader  </span><br><span class="line">4.因为BootstrapClassLoader是最顶层的类加载器,它要试着加载该文件,看自己是否可以加载  </span><br><span class="line">5.不能解析则还给它的子类加载器ExtClassLoader,它也试着加载该文件  </span><br><span class="line">6.还是不能则还给了ApplicationClassLoader,Test.class是我们写的类,由它负责加载,它可以完成加载</span><br><span class="line">7.如果ApplicationClassLoader也不同完成加载,会抛出ClassNotFind的异常</span><br><span class="line"></span><br><span class="line">这样做有什么好处呢</span><br><span class="line"></span><br><span class="line">可以防止我们在编写程序时,创建了一个java.lang.String的类而覆盖了java核心包中原本已经写好的java.lang.String类.</span><br><span class="line">防止核心包中的类被随意篡改,而导致的代码混乱不清</span><br></pre></td></tr></table></figure></p>
+<p>可见性机制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父类加载器加载的类,子类是可以看到的,反之不能</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> chuncongcong.lambda;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hu</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2018/10/13 10:45</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test06</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(Test06.class.getClassLoader());</span><br><span class="line"></span><br><span class="line">        Class.forName(<span class="string">"chuncongcong.lambda.Test06"</span>,<span class="keyword">true</span>,Test06.class.getClassLoader().getParent());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">结果:</span><br><span class="line">sun.misc.Launcher$AppClassLoader@<span class="number">18</span>b4aac2</span><br><span class="line">Exception in thread <span class="string">"main"</span> java.lang.ClassNotFoundException: chuncongcong.lambda.Test06</span><br><span class="line">	at java.net.URLClassLoader.findClass(URLClassLoader.java:<span class="number">381</span>)</span><br><span class="line">	at java.lang.ClassLoader.loadClass(ClassLoader.java:<span class="number">424</span>)</span><br><span class="line">	at java.lang.ClassLoader.loadClass(ClassLoader.java:<span class="number">357</span>)</span><br><span class="line">	at java.lang.Class.forName0(Native Method)</span><br><span class="line">	at java.lang.Class.forName(Class.java:<span class="number">348</span>)</span><br><span class="line">	at chuncongcong.lambda.Test06.main(Test06.java:<span class="number">14</span>)</span><br></pre></td></tr></table></figure>
+<p>单一性机制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">同一个类只能被加载一次,父类加载器加载过的类,子类加载器时不同在进行加载的</span><br><span class="line">存在可以加载的情况,但是不建议</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>连接<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">连接分为三步:</span><br><span class="line">1.验证</span><br><span class="line">2.准备</span><br><span class="line">3.解析</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>验证<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">确保class字节流的信息是否正确,是否会危害到虚拟机</span><br><span class="line"></span><br><span class="line">文件格式验证：验证字节流是否符合Class文件格式的规范；例如：是否以0xCAFEBABE开头、主次版本号是否在当前虚拟机的处理范围之内、常量池中的常量是否有不被支持的类型。</span><br><span class="line"></span><br><span class="line">元数据验证：对字节码描述的信息进行语义分析（注意：对比javac编译阶段的语义分析），以保证其描述的信息符合Java语言规范的要求；例如：这个类是否有父类，除了java.lang.Object之外。</span><br><span class="line"></span><br><span class="line">字节码验证：通过数据流和控制流分析，确定程序语义是合法的、符合逻辑的。</span><br><span class="line"></span><br><span class="line">符号引用验证：确保解析动作能正确执行。</span><br></pre></td></tr></table></figure></p>
+<p>准备<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">正式为类变量(static)分配内存并附默认值,分配的内存是在方法区中的</span><br><span class="line"></span><br><span class="line">1.分配内存的仅仅是类变量,也就是static变量,实例变量是在对象实例化时和对象一起分配内存在堆中的</span><br><span class="line"></span><br><span class="line">2.类变量当前只是赋上默认值,8大基本类型是各自对应的默认值,引用对象默认为null</span><br><span class="line"></span><br><span class="line">3.若是存在static final编译期常量,直接为其附上值,如 static final String a = &quot;123&quot;,在这一过程中a默认为&quot;123&quot;</span><br></pre></td></tr></table></figure></p>
+<p>解析<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">将符号引用解析成直接引用</span><br><span class="line"></span><br><span class="line">这个部分不是特别理解,就用我自己的话来说说吧</span><br><span class="line"></span><br><span class="line">符号引用: 在一个类(a)中我们经常会调用另一个类(b),b这个类是作为包import进来的,在a.class刚刚被加载到内存中时,这些信息都是作为字面量存储的,在方法区中会有一块地方是存储a类有关的信息,而b这个字面量,就是一个符号引用.</span><br><span class="line"></span><br><span class="line">直接引用: b有了自己的内存地址,符号引用指向了这个地址,就有了意义,应该就解析成直接引用了</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>初始化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jvm开始为类变量赋初值,jvm会执行&lt;client&gt;()方法,收集类中所有静态变量,静态块于该方法中,进行执行</span><br><span class="line">1.类变量(静态变量)</span><br><span class="line">2.静态块中的语句</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>初始化顺序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.没有加载和连接的类先加载,连接</span><br><span class="line"></span><br><span class="line">2.父类没有被初始化,先初始化父类类变量</span><br><span class="line"></span><br><span class="line">3.静态变量和静态块按编写顺序从上向下执行</span><br></pre></td></tr></table></figure></p>
+<p>触发初始化的时机(生成&lt; client&gt; ()方法)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.实例化一个没有被加载过的类(new)</span><br><span class="line"></span><br><span class="line">2.调用该类的类变量</span><br><span class="line"></span><br><span class="line">3.调用该类的静态方法</span><br><span class="line"></span><br><span class="line">4.反射</span><br><span class="line"></span><br><span class="line">5.初始化其子类,其父类也会被初始化</span><br></pre></td></tr></table></figure></p>
+<p>初始化不被触发的的情况(不生成&lt; client&gt;()方法)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. 通过子类调用其父类的类变量,只初始化父类初始化子类</span><br><span class="line"></span><br><span class="line">2. 调用类中static final变量,该类不初始化</span><br><span class="line"></span><br><span class="line">3. 定义对象数组,该数组中的对象不会初始化 </span><br><span class="line">    User[] = new User[2]; =&gt; User user1,user2;</span><br><span class="line"></span><br><span class="line">4. 通过类名获取Class对象,该类不被初始化</span><br><span class="line"></span><br><span class="line">5. 通过Class.forName()加载指定类时,initialize赋值为false,该类不初始化,false的意思就是不初始化</span><br><span class="line"></span><br><span class="line">6.通过ClassLoader默认的loadClass方法加载类,该类不被初始化</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>使用</li>
+<li>卸载</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">以上就是一个程序从编写到加载的整个过程了</span><br><span class="line"></span><br><span class="line">一个程序由多个类组成,每个类在第一次用到时都会被加载,也只加载一次</span><br><span class="line"></span><br><span class="line">这样这个类的相关信息就在jvm的方法区中存储好了,再一次使用就会直接去方法区中找</span><br><span class="line"></span><br><span class="line">类加载器还有很多更深入的使用,有兴趣的可以去深入了解一下,这里只是讲了皮毛</span><br><span class="line"></span><br><span class="line">也算总结了一下自己对类加载过程的理解,有说错的,请大佬指出</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.importnew.com/23742.html" target="_blank" rel="noopener">参考文章</a></p>
+
+
+  </article>
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewbox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"/>
+        </svg>
+        </a>
+        © rely 2015-2018
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/yyrely">
+        Rely
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
