@@ -55,7 +55,7 @@
       <ul class="dropdown-content">
 
           
-           <li><a href="/categories/测试/">测试</a></li>
+           <li><a href="/categories/测试/">测试</a></li><li><a href="/categories/java/">java</a></li>
 
       </ul>
     </li>
@@ -118,8 +118,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2018/11/11/first/first/">
-            first
+        <a href="/2018/11/11/LinkedHashMap/LinkedHashMap/">
+            LinkedHashMap源码解析
         </a>
     </h1>
   
@@ -127,15 +127,16 @@
 
   <div class="excerpt">
   
-    
+    1LinkedHashMap是继承HashMap的,大部分的实现还是由HashMap中的代码来实现的.从听说LinkedHashMap的时候,只是知道它是一个有序的map集合,它是怎么做到有序的呢,看看它的源码吧.
+LinkedHashMap如何排序的1234567891011//默认排序public static void main(String[] args) &#123;    Linked
   
-  <a href="/2018/11/11/first/first/">
+  <a href="/2018/11/11/LinkedHashMap/LinkedHashMap/">
     更多
   </a>
   </div>
   <div class="index-meta">
     
-<time datetime="2018-11-11T03:46:59.000Z" itemprop="datePublished">
+<time datetime="2018-11-11T07:37:09.549Z" itemprop="datePublished">
 <svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
   </svg>
@@ -152,7 +153,7 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
     </svg>
     &nbsp;
-    <a href="/categories/测试/">测试</a>
+    <a href="/categories/java/">java</a>
 
 
 
@@ -174,8 +175,8 @@
   
   
     <h1 class="index-title">
-        <a href="/2018/11/10/hello-world/">
-            Hello World
+        <a href="/2018/11/11/HashMap/HashMap/">
+            HashMap源码解析
         </a>
     </h1>
   
@@ -183,24 +184,32 @@
 
   <div class="excerpt">
   
-    Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+    初始化HashMap12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758//新建一个HashmapHashMap&lt;String,String&gt; map = new HashMap&lt;&gt;();//无参构造器public
   
-  <a href="/2018/11/10/hello-world/">
+  <a href="/2018/11/11/HashMap/HashMap/">
     更多
   </a>
   </div>
   <div class="index-meta">
     
-<time datetime="2018-11-10T07:53:13.343Z" itemprop="datePublished">
+<time datetime="2018-11-11T07:36:54.562Z" itemprop="datePublished">
 <svg class="i-calendar" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"/>
   </svg>
   &nbsp;
-  11-10
+  11-11
 </time>
 
 
+
+    
+    &nbsp;
+    <svg class="i-tag" viewbox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"/>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"/>
+    </svg>
+    &nbsp;
+    <a href="/categories/java/">java</a>
 
 
 
